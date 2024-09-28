@@ -1,74 +1,131 @@
 <!DOCTYPE html>
 <html lang="de-DE">
-<head>
-    <!-- ---------- Standard-Mist ---------- -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/png" href="{img-path}">
-    <title>Shopping-Liste</title>
+    <head>
+        <!-- ---------- Standard-Mist ---------- -->
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="shortcut icon" type="image/png" href="{img-path}" />
+        <title>Shopping-Liste</title>
 
-    <!-- ---------- Fonts ---------- -->
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
-    <script src="https://kit.fontawesome.com/14c2c20311.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700&display=swap" rel="stylesheet">
+        <!-- ---------- Fonts ---------- -->
+        <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+        <script
+            src="https://kit.fontawesome.com/14c2c20311.js"
+            crossorigin="anonymous"
+        ></script>
+        <link
+            href="https://fonts.googleapis.com/css?family=Poppins:300,400,700&display=swap"
+            rel="stylesheet"
+        />
 
-    <!-- ---------- Styles & Script ---------- -->
-    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
-    <script type="text/javascript" src="./index.js"></script>
-</head>
-<body>
-    <h1 class="page-heading">Shopping-Liste</h1>
+        <!-- ---------- Styles & Script ---------- -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href="./css/style.css"
+        />
+        <script type="text/javascript" src="./index.js"></script>
+    </head>
+    <body>
+        <h1 class="page-heading">Shopping-Liste</h1>
 
-    <form class="add-item">
-        <div class="add-item__field add-item__field--quantity">
-            <input type="number" class="add-item__input add-item__input--quantity" id="add-item-quantity" min="0" placeholder="Anzahl" autocomplete="off">
-            <span class="placeholder-hidden">Anzahl</span>
-        </div>
-        <div class="add-item__field add-item__field--unit">
-            <input type="text" class="add-item__input add-item__input--unit" id="add-item-unit" placeholder="Einheit" autocomplete="off">
-            <span class="placeholder-hidden">Einheit</span>
+        <form class="add-item">
+            <div class="add-item__field add-item__field--quantity">
+                <input
+                    type="number"
+                    class="add-item__input add-item__input--quantity"
+                    id="add-item-quantity"
+                    min="0"
+                    placeholder="Anzahl"
+                    autocomplete="off"
+                />
+                <span class="placeholder-hidden">Anzahl</span>
+            </div>
+            <div class="add-item__field add-item__field--unit">
+                <input
+                    type="text"
+                    class="add-item__input add-item__input--unit"
+                    id="add-item-unit"
+                    placeholder="Einheit"
+                    autocomplete="off"
+                />
+                <span class="placeholder-hidden">Einheit</span>
 
-            <ul class="add-item__unit-dropdown" id="unit-dropdown">
-                <li class="dropdown__unit">Stück</li>
-                <li class="dropdown__unit">g</li>
-                <li class="dropdown__unit">kg</li>
-                <li class="dropdown__unit">Pfund</li>
-                <li class="dropdown__unit">ml</li>
-                <li class="dropdown__unit">l</li>
-            </ul>
-        </div>
-        <div class="add-item__field add-item__field--name">
-            <input type="text" class="add-item__input add-item__input--name" id="add-item-name" placeholder="Sache (z. B. Salz, Butter, Chinchilla, ...)" autocomplete="off">
-            <span class="placeholder-hidden">Sache (z. B. Salz, Butter, Chinchilla, ...)</span>
-        </div>
-        
-        <button class="submit-item" id="submit-item"></button>
-    </form>
+                <ul class="add-item__unit-dropdown" id="unit-dropdown">
+                    <li class="dropdown__unit">Stück</li>
+                    <li class="dropdown__unit">g</li>
+                    <li class="dropdown__unit">kg</li>
+                    <li class="dropdown__unit">Pfund</li>
+                    <li class="dropdown__unit">ml</li>
+                    <li class="dropdown__unit">l</li>
+                </ul>
+            </div>
+            <div class="add-item__field add-item__field--name">
+                <input
+                    type="text"
+                    class="add-item__input add-item__input--name"
+                    id="add-item-name"
+                    placeholder="Sache (z. B. Salz, Butter, Chinchilla, ...)"
+                    autocomplete="off"
+                />
+                <span class="placeholder-hidden">
+                    <!-- Sache (z. B. Salz, Butter, Chinchilla, ...) -->
+                    Sache
+                </span>
+            </div>
 
-    <ul class="item-list" id="item-list">
-        <li class="item-list__head">
-            <div class="item-list__description item-list__description--quantity">Anzahl</div>
-            <div class="item-list__description item-list__description--unit">Einheit</div>
-            <div class="item-list__description item-list__description--name">Sache</div>
+            <button class="submit-item" id="submit-item"></button>
+        </form>
 
-            <div class="align-description"></div>
-        </li>
-        
-        <li class="item-list__item">
-            <div class="item-list__property item-list__property--quantity">10</div>
-            <div class="item-list__property item-list__property--unit">Stück</div>
-            <div class="item-list__property item-list__property--name">Chinchilla</div>
+        <ul class="item-list" id="item-list">
+            <li class="item-list__head">
+                <div
+                    class="item-list__description item-list__description--quantity"
+                >
+                    Anzahl
+                </div>
+                <div
+                    class="item-list__description item-list__description--unit"
+                >
+                    Einheit
+                </div>
+                <div
+                    class="item-list__description item-list__description--name"
+                >
+                    Sache
+                </div>
 
-            <button class="item-list__remove-item"></button>
-        </li>
-        <li class="item-list__item">
-            <div class="item-list__property item-list__property--quantity">100</div>
-            <div class="item-list__property item-list__property--unit">kg</div>
-            <div class="item-list__property item-list__property--name">Chinchillafutter</div>
+                <div class="align-description"></div>
+            </li>
 
-            <button class="item-list__remove-item"></button>
-        </li>
-    </ul>
-</body>
+            <li class="item-list__item">
+                <div class="item-list__property item-list__property--quantity">
+                    10
+                </div>
+                <div class="item-list__property item-list__property--unit">
+                    Stück
+                </div>
+                <div class="item-list__property item-list__property--name">
+                    Chinchilla
+                </div>
+
+                <button class="item-list__remove-item"></button>
+            </li>
+            <li class="item-list__item">
+                <div class="item-list__property item-list__property--quantity">
+                    100
+                </div>
+                <div class="item-list__property item-list__property--unit">
+                    kg
+                </div>
+                <div class="item-list__property item-list__property--name">
+                    Chinchillafutter
+                </div>
+
+                <button class="item-list__remove-item"></button>
+            </li>
+        </ul>
+    </body>
 </html>
