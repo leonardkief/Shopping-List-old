@@ -1,0 +1,251 @@
+/* Standard-Zeugs
+======================================== */
+*,
+*::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: Poppins, 'Segoe UI', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body * {
+    outline: none;
+}
+
+/* Webseite
+======================================== */
+::selection {
+    background: #ffdd00;
+}
+
+.page-heading {
+    background: #ffdd00;
+    text-align: center;
+    font-weight: 300;
+    font-size: 5rem;
+    color: #333;
+    margin-bottom: 4rem;
+    padding: 3rem 0;
+}
+
+.add-item {
+    width: 70%;
+    max-width: 100rem;
+    margin: 0 auto;
+}
+
+.add-item {
+    display: flex;
+    align-items: center;
+}
+
+.add-item__field {
+    position: relative;
+}
+
+.add-item__field--quantity,
+.add-item__field--unit {
+    flex: 1 0 0rem;
+}
+
+.add-item__field--name {
+    flex: 3 0 0rem;
+}
+
+.add-item__field:not(:last-of-type) {
+    margin-right: 0.5rem;
+}
+
+.add-item__field--unit {
+    position: relative;
+}
+
+.add-item__unit-dropdown {
+    transition: all 200ms;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style-type: none;
+    background: #fff;
+    width: 100%;
+    /* max-height: 0; */
+}
+
+.add-item__unit-dropdown li {
+    cursor: pointer;
+    transition: all 200ms;
+    font-size: 1.6rem;
+    border: 0.1rem solid #ddd;
+    border-top: none;
+    padding: 0.8rem 1rem;
+
+    /* border: 0.1rem solid orangered; */
+}
+
+.add-item__unit-dropdown li:hover {
+    background: #ddd;
+
+    /* background: orangered; */
+}
+
+.add-item__input {
+    transition: all 200ms;
+    font-family: inherit;
+    font-size: 2rem;
+    color: #333;
+    width: 100%;
+    border: none;
+    border-bottom: 0.2rem solid #ddd;
+    padding: 1rem;
+}
+
+.add-item__input:focus {
+    border-bottom: 0.2rem solid #333;
+}
+
+.add-item__input:invalid {
+    box-shadow: none;
+    border-bottom: 0.2rem solid orangered;
+}
+
+.placeholder-hidden {
+    transition: all 200ms;
+    transform: translateY(-100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.add-item__input:placeholder-shown + .placeholder-hidden {
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+    top: 50%;
+    left: 1rem;
+    font-size: 2rem;
+}
+
+.submit-item {
+    cursor: pointer;
+    transition: all 200ms;
+    position: relative;
+    background: transparent;
+    width: 4.5rem;
+    height: 4.5rem;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+
+}
+
+.submit-item:hover {
+    background: #ddd;
+}
+
+.submit-item::before,
+.submit-item::after {
+    content: "";
+    transform: translate(-50%, -50%) rotate(0deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #333;
+    width: 0.2rem;
+    height: 2rem;
+}
+
+.submit-item::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.item-list {
+    list-style-type: none;
+    font-size: 2rem;
+    width: 70%;
+    max-width: 80rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+
+    /* border: 1px solid red; */
+}
+
+.item-list__head,
+.item-list__item {
+    display: flex;
+    align-items: center;
+    border-bottom: 0.2rem solid #333;
+}
+
+.item-list__head {
+    padding: 0.5rem 0;
+}
+
+.item-list__item {
+    border-bottom: 0.1rem solid #ddd;
+    padding: 1.5rem 0;
+}
+
+.item-list__description,
+.item-list__property {
+    flex: 1 0 0rem;
+    text-align: center;
+}
+
+.item-list__description--name,
+.item-list__property--name {
+    flex: 5 0 0rem;
+    text-align: left;
+}
+
+.align-description,
+.item-list__remove-item {
+    height: 0.1rem;
+    width: 4rem;
+
+    /* background: red; */
+}
+
+.item-list__remove-item {
+    cursor: pointer;
+    transition: all 200ms;
+    position: relative;
+    background: transparent;
+    height: 4rem;
+    border: none;
+    border-radius: 50%;
+
+    /* delete later */
+    /* border: 1px solid red; */
+}
+
+.item-list__remove-item::before,
+.item-list__remove-item::after {
+    content: "";
+    transform: translate(-50%, -50%) rotate(45deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #333;
+    width: 0.2rem;
+    height: 2.2rem;
+}
+
+.item-list__remove-item::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.item-list__remove-item:hover {
+    background: #ddd;
+}
